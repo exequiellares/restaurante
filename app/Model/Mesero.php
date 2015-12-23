@@ -10,7 +10,11 @@ class Mesero extends AppModel
 					'numeric' => array(
 							'rule' => 'numeric',
 							'message' => 'Solo números'
-						)
+						),
+                                        'unique' => array(
+                                                        'rule' => 'isUnique',
+                                                        'message' => 'El DNI ya se encuentra en nuestra base de datos'
+                                        )
 				),
 			'nombre' => array(
 					'rule' => 'notBlank'
