@@ -2,8 +2,8 @@
 
 <p><strong>DNI: </strong><?php echo $mesero['Mesero']['dni']; ?></p>
 <p><strong>Teléfono: </strong><?php echo $mesero['Mesero']['telefono']; ?></p>
-<p><strong>Creado: </strong><?php echo $this->Time->format('d-m-Y; h:i A',$mesero['Mesero']['created']); ?></p>
-<p><strong>Modificado: </strong><?php echo $this->Time->format('d-m-Y; h:i A', $mesero['Mesero']['modified']); ?></p>
+<p><strong>Creado: </strong><?php echo $this->Time->format('d-m-Y h:i A',$mesero['Mesero']['created']); ?></p>
+<p><strong>Modificado: </strong><?php echo $this->Time->format('d-m-Y h:i A', $mesero['Mesero']['modified']); ?></p>
 
 <pre><?php //print_r($mesero); ?></pre>
 
