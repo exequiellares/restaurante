@@ -75,6 +75,20 @@ class MeserosController extends AppController{
                 $this->request->data = $mesero;
             }
         }
+        
+        public function eliminar($id)
+        { 
+            if($this->request->is('get'))
+            {
+                throw new MethodNotAllowedException('INCORRECTO');
+            }
+            
+            if($this->Mesero->delete($id))
+            {
+                $this->Flash->success('El mesero ha sido eliminado');
+                return $this->redirect(array('action' => 'index'));
+            }
+        }
 
 }
 

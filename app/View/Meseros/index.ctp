@@ -9,6 +9,7 @@
 		<td>Apellido</td>
 		<td>Detalle</td>
                 <td>Editar</td>
+                <td>Eliminar</td>
 	</tr>
 	<?php
 	/*
@@ -30,6 +31,8 @@
                     $mesero['Mesero']['id'])); ?></td>
                 <td><?php echo $this->html->link('Editar', array('controller' => 'meseros', 'action' => 'editar',
                     $mesero['Mesero']['id'])); ?></td>
+                <td><?php echo $this->Form->postLink('Eliminar', array('action' => 'eliminar', $mesero['Mesero']['id']), 
+                    array('confirm' => 'Eliminar a ' . $mesero['Mesero']['nombre'] . '?')); ?></td>
 	</tr>
 	<?php endforeach; ?>
 </table>
