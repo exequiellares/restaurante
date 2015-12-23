@@ -228,10 +228,6 @@
  */
 	Configure::write('Security.cipherSeed', '76850409657453542496749683645');
 
-/**
-* Habilitar debuger
-*/
-Configure::write('debug', 1);
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
