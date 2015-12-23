@@ -7,7 +7,8 @@
 		<td>Id</td>
 		<td>Nombre</td>
 		<td>Apellido</td>
-		<td>Acciones</td>
+		<td>Detalle</td>
+                <td>Editar</td>
 	</tr>
 	<?php
 	/*
@@ -25,7 +26,10 @@
 		<td><?php echo $mesero['Mesero']['id'];?></td>
 		<td><?php echo $mesero['Mesero']['nombre'];?></td>
 		<td><?php echo $mesero['Mesero']['apellido'];?></td>
-		<td><?php echo $this->Html->link('Detalle', array('controller' => 'meseros', 'action' => 'ver', $mesero['Mesero']['id'])); ?></td>
+		<td><?php echo $this->Html->link('Detalle', array('controller' => 'meseros', 'action' => 'ver', 
+                    $mesero['Mesero']['id'])); ?></td>
+                <td><?php echo $this->html->link('Editar', array('controller' => 'meseros', 'action' => 'editar',
+                    $mesero['Mesero']['id'])); ?></td>
 	</tr>
 	<?php endforeach; ?>
 </table>

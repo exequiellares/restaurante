@@ -42,6 +42,39 @@ class MeserosController extends AppController{
 			$this->Flash->set('No se pudo crear el Mesero');
 		}
 	}
+        
+        public function editar($id = null)
+        {
+            if(!$id)
+            {
+                throw new NotFoundException('Datos Invalidos');
+            }
+            
+            $mesero = $this->Mesero->findById($id);
+            if(!$mesero)
+            {
+                throw new Exception('El mesero no ha sido encontrado');
+            }
+            
+            if($this->request->is('post','put'))
+            {
+                $this->Mesero->id = $id;
+                
+                if($this->Mesero->save($this->request->data))
+                {
+                    $this->Flash->success('El mesero ha sido modificado');
+                    return $this->redirect(array('action' => 'index'));
+                }
+                
+                $this->Flash->set('El registro no pudo ser modificado.');
+                
+            }
+            
+            if(!$this->request->data)
+            {
+                $this->request->data = $mesero;
+            }
+        }
 
 }
 
